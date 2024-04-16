@@ -1,0 +1,21 @@
+{% extends 'webapp/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<body>
+<br>
+<br>
+
+<div class="text-center">
+<h1 style="color: darkgreen; font-size: xxx-large;"><strong>MedStore</strong></h1>
+<br>
+<h3>Keep track of medicines effectively</h3>
+<br>
+
+<a class="btn btn-primary" type="button" href="{% url 'register' %}">Create your account &nbsp;<i class="fa fa-user-plus" aria-hidden="true"></i></i></a> 
+</div>
+
+</body>
+
+{% endblock %}
+

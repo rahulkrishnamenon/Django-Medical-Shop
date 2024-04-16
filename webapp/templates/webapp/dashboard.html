@@ -1,0 +1,46 @@
+{% extends 'webapp/base.html'%}
+{% block content %}
+<br>
+<h5>Welcome to the dashboard page! {{user}}</h5>
+  <hr>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            
+            <form method="get" action="{% url 'dashboard' %}" >
+                <input type="text" name="q" placeholder="Search medicine..." value="{{ search_query }}">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+        <div class="col-md-6 mx-auto text-center">
+            <a class="btn btn-info btn-sm float-right" href="{% url 'create-record' %}"> <i class="fa fa-plus" aria-hidden="true"></i> &nbsp; Add new stock</a>
+            <br><br>
+        </div>
+    </div>
+
+    <table class="table table-light table-hover table-bordered">
+        <thead class="table-success">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Medicine Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if records %}
+                {% for record in records %}
+                    <tr>
+                        <td>{{record.id}}</td>
+                        <td>{{record.medicine_name}}</td>
+                        <td>{{record.category}}</td>
+                        <td style="align-content: center;"><a href="{% url 'record' record.id %}" class="btn btn-primary" >View</a></td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

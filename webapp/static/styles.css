@@ -1,0 +1,12 @@
+
+.form-layout{
+    border-radius: 15px;
+    width: 500px;
+}
+.mybackground{
+    background-image: url('/static/medicine.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center
+    
+}

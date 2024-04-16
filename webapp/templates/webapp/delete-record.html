@@ -1,0 +1,9 @@
+{% extends 'webapp/base.html' %}
+{%block content%}
+
+<form method="post" action="">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{record.name}}"?</p>
+    <button type="submit" class="btn btn-danger">Confirm Delete</button>
+</form>
+{% endblock %}
